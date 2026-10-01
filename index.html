@@ -34,7 +34,7 @@ button{font:inherit}
 .quote{margin-top:14px;background:var(--navy);color:white;border-radius:20px;padding:18px;position:relative;overflow:hidden}.quote:after{content:"KAIZEN";position:absolute;right:-15px;bottom:-8px;font-size:42px;font-weight:950;color:rgba(255,255,255,.045)}.quote b{font-size:12px}.quote p{font-size:11px;line-height:1.55;color:#cbd5e1;margin:7px 0 0;max-width:85%}
 .bottom{position:fixed;left:12px;right:12px;bottom:12px;height:64px;background:rgba(255,255,255,.94);backdrop-filter:blur(18px);border:1px solid rgba(226,232,240,.9);border-radius:21px;box-shadow:0 14px 35px rgba(15,23,42,.12);display:grid;grid-template-columns:repeat(3,1fr);z-index:20}
 .nav{border:0;background:transparent;color:#64748b;font-size:9px;font-weight:900;cursor:pointer}.nav .nicon{font-size:18px;display:block;margin-bottom:3px}.nav.active{color:#4f725f}.nav.active .nicon{transform:translateY(-1px)}
-.workspace{position:fixed;inset:0;background:#f5f7fb;z-index:30;display:none}.workspace.show{display:block}.workspace-top{height:62px;background:white;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;padding:10px 13px}.back{width:40px;height:40px;border:0;background:#f1f5f9;border-radius:12px;font-size:20px}.workspace-title{font-size:14px;font-weight:900}.workspace-sub{font-size:9px;color:var(--muted);margin-top:2px}.workspace iframe{width:100%;height:calc(100% - 62px);border:0;display:block}
+.workspace{position:fixed;inset:0;background:#f5f7fb;z-index:30;display:none}.workspace.show{display:block}.workspace-top{height:62px;background:white;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;padding:10px 13px}.back{width:40px;height:40px;border:0;background:#f1f5f9;border-radius:12px;font-size:20px}.workspace-title{font-size:14px;font-weight:900}.workspace-sub{font-size:9px;color:var(--muted);margin-top:2px}.workspace iframe{width:100%;height:calc(100% - 62px);border:0;display:none;background:white}.workspace iframe.ready{display:block}.workspace-loading{position:absolute;top:62px;bottom:0;left:0;right:0;display:none;align-items:center;justify-content:center;flex-direction:column;gap:8px;background:#f7f5ef;z-index:2;color:#496858}.workspace.loading .workspace-loading{display:flex}.workspace-loading b{font-size:13px}.workspace-loading span{font-size:9px;color:#87918b}.spinner{width:28px;height:28px;border:3px solid #dbe6dd;border-top-color:#496858;border-radius:50%;animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
 .splash{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:radial-gradient(circle at 75% 15%,#7e9d88 0,#344b40 35%,#18251f 100%);color:white;transition:.5s}.splash.hide{opacity:0;visibility:hidden;pointer-events:none}.splash-in{text-align:center}.bigmark{width:88px;height:88px;border-radius:27px;background:white;color:var(--navy);display:grid;place-items:center;font-size:42px;font-weight:950;margin:auto;box-shadow:0 25px 65px rgba(0,0,0,.35)}.splash h1{margin:18px 0 0;font-size:34px;letter-spacing:4px}.splash p{font-size:10px;letter-spacing:2px;color:#b8c8da;margin:8px 0 23px}.loader{height:4px;width:110px;background:rgba(255,255,255,.16);border-radius:99px;overflow:hidden;margin:auto}.loader i{display:block;height:100%;width:45%;background:linear-gradient(90deg,#b7d49e,#d8b979);border-radius:99px;animation:load 1.1s infinite}@keyframes load{from{transform:translateX(-130%)}to{transform:translateX(300%)}}
 .install{display:none;position:fixed;left:16px;right:16px;bottom:86px;background:#0f172a;color:white;border-radius:17px;padding:12px 13px;z-index:25;box-shadow:0 15px 35px rgba(15,23,42,.25);align-items:center;gap:10px}.install.show{display:flex}.install b{font-size:11px}.install span{font-size:9px;color:#cbd5e1;display:block;margin-top:2px}.install button{margin-left:auto;border:0;background:#9bbf9a;color:#26332d;border-radius:10px;padding:9px 11px;font-weight:900;font-size:10px}
 .tools-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.tool-card{border:1px solid var(--line);background:rgba(255,253,248,.92);border-radius:20px;padding:15px;text-align:left;box-shadow:0 6px 20px rgba(15,23,42,.04);cursor:pointer;min-height:105px}.tool-card span{display:block;font-size:23px;margin-bottom:10px}.tool-card b{display:block;font-size:11px}.tool-card small{display:block;color:var(--muted);font-size:9px;margin-top:4px}.tool-card:active{transform:scale(.98)}.panel{position:fixed;inset:0;background:rgba(3,8,18,.55);backdrop-filter:blur(5px);z-index:60;display:none;align-items:flex-end}.panel.show{display:flex}.panel-box{background:white;width:100%;border-radius:26px 26px 0 0;padding:20px 18px 28px;max-height:80vh;overflow:auto;animation:up .25s ease}@keyframes up{from{transform:translateY(100%)}to{transform:translateY(0)}}.panel-head{display:flex;justify-content:space-between;align-items:center}.panel-head b{font-size:17px}.close-panel{width:36px;height:36px;border:0;border-radius:11px;background:#f1f5f9;font-size:18px}.panel-sub{font-size:10px;color:#64748b;margin:4px 0 14px}.panel-body{white-space:pre-line;font-size:12px;line-height:1.7;color:#334155;background:#f8fafc;border-radius:15px;padding:15px}.idea-chip{margin-top:12px;padding:13px;border-radius:14px;background:#eff6ff;color:#1e40af;font-size:11px;font-weight:700}.streak{display:flex;align-items:center;gap:10px;margin-top:14px;background:linear-gradient(135deg,#f7f0df,#fbf7eb);border:1px solid #e7d8b8;border-radius:17px;padding:13px}.streak strong{font-size:18px}.streak small{display:block;color:#78633e;font-size:9px;margin-top:2px}.streak-reset{margin-left:auto;border:0;background:rgba(120,99,62,.10);color:#78633e;width:30px;height:30px;border-radius:10px;font-weight:900;cursor:pointer}
@@ -95,7 +95,9 @@ button{font:inherit}
 
 <div class="workspace" id="workspace">
  <div class="workspace-top"><button class="back" onclick="closeWorkspace()">‹</button><div><div class="workspace-title" id="wtitle">KAIZEN</div><div class="workspace-sub" id="wsub"></div></div></div>
- <iframe id="workspaceFrame" title="KAIZEN workspace"></iframe>
+ <div class="workspace-loading" id="workspaceLoading"><div class="spinner"></div><b>Opening KAIZEN…</b><span>Please wait</span></div>
+ <iframe id="submitFrame" title="Submit Kaizen workspace"></iframe>
+ <iframe id="dashboardFrame" title="Kaizen Dashboard workspace"></iframe>
 </div>
 
 <div class="splash" id="splash"><div class="splash-in"><div class="bigmark">K</div><h1>KAIZEN</h1><p>SMALL CHANGES • BIG IMPACT</p><div class="loader"><i></i></div></div></div>
@@ -103,15 +105,41 @@ button{font:inherit}
 <script>
 const URL="https://script.google.com/macros/s/AKfycbxGIKp2QDW9Fx3HDFfQwnffVowrTI50zGPlOgxG9gd-9Is4Lp3u391AbM-5fuLbFR1E/exec";
 let deferredPrompt=null;
+document.getElementById("submitFrame").src=URL;
+document.getElementById("dashboardFrame").src=URL+"?page=dashboard";
+document.getElementById("submitFrame").onload=()=>frameLoaded("submit");
+document.getElementById("dashboardFrame").onload=()=>frameLoaded("dashboard");
+let framesReady={submit:false,dashboard:false};
 function openWorkspace(title,sub){
  document.getElementById("wtitle").textContent=title;
  document.getElementById("wsub").textContent=sub;
- let target=URL;
- if(title==="Kaizen Dashboard") target=URL+"?page=dashboard";
- document.getElementById("workspaceFrame").src=target;
- document.getElementById("workspace").classList.add("show")
+ const isDashboard=title==="Kaizen Dashboard";
+ const frame=document.getElementById(isDashboard?"dashboardFrame":"submitFrame");
+ const other=document.getElementById(isDashboard?"submitFrame":"dashboardFrame");
+ other.classList.remove("ready");
+ document.getElementById("workspace").classList.add("show");
+ document.getElementById("workspace").classList.toggle("loading",!framesReady[isDashboard?"dashboard":"submit"]);
+ if(framesReady[isDashboard?"dashboard":"submit"]){
+   frame.classList.add("ready");
+   document.getElementById("workspace").classList.remove("loading");
+ }
 }
-function closeWorkspace(){document.getElementById("workspace").classList.remove("show");document.getElementById("workspaceFrame").src="about:blank"}
+function closeWorkspace(){
+ document.getElementById("workspace").classList.remove("show","loading");
+ document.getElementById("submitFrame").classList.remove("ready");
+ document.getElementById("dashboardFrame").classList.remove("ready");
+}
+function frameLoaded(which){
+ framesReady[which]=true;
+ if(document.getElementById("workspace").classList.contains("show")){
+   const title=document.getElementById("wtitle").textContent;
+   const wanted=title==="Kaizen Dashboard"?"dashboard":"submit";
+   if(wanted===which){
+     document.getElementById(which==="dashboard"?"dashboardFrame":"submitFrame").classList.add("ready");
+     document.getElementById("workspace").classList.remove("loading");
+   }
+ }
+}
 function showTip(){showPanel("KAIZEN TIP","A small thought for today","Find one source of waste today: waiting, motion, defects, over-processing, inventory, transport or rework.\n\nAsk yourself: “Can I make this one step simpler?”");}
 window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredPrompt=e;document.getElementById("install").classList.add("show")});
 async function installApp(){if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;document.getElementById("install").classList.remove("show")}
@@ -132,7 +160,7 @@ function updateStreak(){const key="kaizen_open_date";const today=new Date().toIS
 updateStreak();
 
 if("serviceWorker"in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js"));
-setTimeout(()=>document.getElementById("splash").classList.add("hide"),1200);
+setTimeout(()=>document.getElementById("splash").classList.add("hide"),900);
 </script>
 </body>
 </html>
