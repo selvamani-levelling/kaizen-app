@@ -112,7 +112,7 @@ function openWorkspace(title,sub){
  document.getElementById("workspace").classList.add("show")
 }
 function closeWorkspace(){document.getElementById("workspace").classList.remove("show");document.getElementById("workspaceFrame").src="about:blank"}
-function showTip(){alert("KAIZEN TIP\n\nFind one source of waste today: waiting, motion, defects, over-processing, inventory, transport or rework. Ask: “Can I make this one step simpler?”")}
+function showTip(){showPanel("KAIZEN TIP","A small thought for today","Find one source of waste today: waiting, motion, defects, over-processing, inventory, transport or rework.\n\nAsk yourself: “Can I make this one step simpler?”");}
 window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredPrompt=e;document.getElementById("install").classList.add("show")});
 async function installApp(){if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;document.getElementById("install").classList.remove("show")}
 const prompts=[
