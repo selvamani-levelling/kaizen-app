@@ -88,7 +88,14 @@ button{font:inherit}
 <script>
 const URL="https://script.google.com/macros/s/AKfycbxGIKp2QDW9Fx3HDFfQwnffVowrTI50zGPlOgxG9gd-9Is4Lp3u391AbM-5fuLbFR1E/exec";
 let deferredPrompt=null;
-function openWorkspace(title,sub){document.getElementById("wtitle").textContent=title;document.getElementById("wsub").textContent=sub;document.getElementById("workspaceFrame").src=URL;document.getElementById("workspace").classList.add("show")}
+function openWorkspace(title,sub){
+ document.getElementById("wtitle").textContent=title;
+ document.getElementById("wsub").textContent=sub;
+ let target=URL;
+ if(title==="Kaizen Dashboard") target=URL+"?page=dashboard";
+ document.getElementById("workspaceFrame").src=target;
+ document.getElementById("workspace").classList.add("show")
+}
 function closeWorkspace(){document.getElementById("workspace").classList.remove("show");document.getElementById("workspaceFrame").src="about:blank"}
 function showTip(){alert("KAIZEN TIP\n\nFind one source of waste today: waiting, motion, defects, over-processing, inventory, transport or rework. Ask: “Can I make this one step simpler?”")}
 window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredPrompt=e;document.getElementById("install").classList.add("show")});
