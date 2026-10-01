@@ -1,25 +1,15 @@
 {
-  "name": "KAIZEN",
-  "short_name": "KAIZEN",
-  "description": "Continuous Improvement - Kaizen Submission and Dashboard",
-  "start_url": "./",
-  "scope": "./",
-  "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#111827",
-  "theme_color": "#111827",
-  "icons": [
-    {
-      "src": "icons/icon.svg",
-      "sizes": "192x192",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icons/icon.svg",
-      "sizes": "512x512",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    }
+  "name":"KAIZEN — Continuous Improvement",
+  "short_name":"KAIZEN",
+  "description":"Kaizen submission and review app",
+  "start_url":"./",
+  "scope":"./",
+  "display":"standalone",
+  "orientation":"portrait",
+  "background_color":"#0b1220",
+  "theme_color":"#0b1220",
+  "icons":[
+    {"src":"icons/icon.svg","sizes":"192x192","type":"image/svg+xml","purpose":"any maskable"},
+    {"src":"icons/icon.svg","sizes":"512x512","type":"image/svg+xml","purpose":"any maskable"}
   ]
 }
