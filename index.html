@@ -103,12 +103,14 @@ button{font:inherit}
 <div class="splash" id="splash"><div class="splash-in"><div class="bigmark">K</div><h1>KAIZEN</h1><p>SMALL CHANGES • BIG IMPACT</p><div class="loader"><i></i></div></div></div>
 
 <script>
-const URL="https://script.google.com/macros/s/AKfycbxGIKp2QDW9Fx3HDFfQwnffVowrTI50zGPlOgxG9gd-9Is4Lp3u391AbM-5fuLbFR1E/exec";
+const URL="https://script.google.com/macros/s/AKfycbwK8h9WlzR4adtGs5rBJirRQCvx-d8GATspibnndy0xT-F-HGXDIRLUJVIU-KDb6e5n/exec";
 let deferredPrompt=null;
 document.getElementById("submitFrame").src=URL;
-document.getElementById("dashboardFrame").src=URL+"?page=dashboard";
+document.getElementById("dashboardFrame").src=URL;
 document.getElementById("submitFrame").onload=()=>frameLoaded("submit");
 document.getElementById("dashboardFrame").onload=()=>frameLoaded("dashboard");
+document.getElementById("submitFrame").onerror=()=>frameFailed("submit");
+document.getElementById("dashboardFrame").onerror=()=>frameFailed("dashboard");
 let framesReady={submit:false,dashboard:false};
 function openWorkspace(title,sub){
  document.getElementById("wtitle").textContent=title;
@@ -129,7 +131,11 @@ function closeWorkspace(){
  document.getElementById("submitFrame").classList.remove("ready");
  document.getElementById("dashboardFrame").classList.remove("ready");
 }
-function frameLoaded(which){
+function frameFailed(which){
+ document.getElementById("workspace").classList.remove("loading");
+ const title=which==="dashboard"?"Dashboard":"Submit Kaizen";
+ document.getElementById("wtitle").textContent=title+" unavailable";
+ document.getElementById("wsub").textContent="The Google Apps Script deployment could not be opened.";\n}\nfunction frameLoaded(which){
  framesReady[which]=true;
  if(document.getElementById("workspace").classList.contains("show")){
    const title=document.getElementById("wtitle").textContent;
