@@ -3,146 +3,67 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#075b45">
+<meta name="theme-color" content="#064936">
 <meta name="description" content="KAIZEN — Continuous Improvement">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icons/icon.svg">
 <title>KAIZEN | Continuous Improvement</title>
 <style>
-:root{--g:#075b45;--g2:#0c7659;--mint:#eaf6f0;--ink:#19352c;--muted:#75837c;--bg:#f5f7f6;--white:#fff;--line:#e1eae5;--gold:#d7ad55}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;width:100%;height:100%;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
-body{overflow:hidden}button{font:inherit}
+:root{--deep:#043e30;--green:#075b45;--green2:#0d8060;--mint:#eaf7f1;--mint2:#d5eee2;--ink:#17362c;--muted:#718079;--bg:#f4f7f5;--white:#fff;--line:#dfebe5;--gold:#e2b85d}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;width:100%;height:100%;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}body{overflow:hidden}button{font:inherit}
 .app{height:100%;display:flex;flex-direction:column}
-.hero{color:#fff;background:radial-gradient(circle at 85% 5%,rgba(255,255,255,.15),transparent 24%),linear-gradient(145deg,#043e30,#075b45 58%,#0d8060);padding:18px 17px 23px;padding-top:calc(18px + env(safe-area-inset-top));border-radius:0 0 30px 30px;box-shadow:0 10px 30px rgba(4,62,48,.18)}
-.top{display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px}.mark{width:43px;height:43px;border-radius:14px;background:#fff;color:var(--g);display:grid;place-items:center;font-size:21px;font-weight:950;box-shadow:0 7px 18px rgba(0,0,0,.18)}.brand b{display:block;font-size:18px;letter-spacing:1.4px}.brand small{display:block;font-size:8px;letter-spacing:1.5px;opacity:.72;margin-top:3px;font-weight:800}.live{font-size:8px;font-weight:900;letter-spacing:.8px;padding:7px 9px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(255,255,255,.1)}
-.hero-copy{margin-top:21px}.eyebrow{font-size:8px;letter-spacing:2px;font-weight:900;opacity:.72}.hero h1{font-size:28px;line-height:1.08;letter-spacing:-.8px;margin:8px 0 0}.hero h1 em{font-style:normal;color:#bfe4cf}.hero p{font-size:11px;line-height:1.5;opacity:.78;margin:8px 0 0;max-width:350px}
-.content{flex:1;overflow:auto;padding:18px 15px calc(96px + env(safe-area-inset-bottom));max-width:700px;width:100%;margin:auto}
-.section{display:flex;justify-content:space-between;align-items:center;margin:2px 2px 10px}.section b{font-size:14px}.section span{font-size:9px;color:var(--muted)}
-.actions{display:grid;grid-template-columns:1.12fr .88fr;gap:11px}
-.action{border:0;border-radius:22px;min-height:139px;padding:17px;text-align:left;cursor:pointer;position:relative;overflow:hidden;box-shadow:0 9px 24px rgba(18,55,43,.08)}.action:active{transform:scale(.985)}.primary{color:#fff;background:linear-gradient(145deg,#08745a,#064936)}.secondary{background:#fff;color:var(--ink);border:1px solid var(--line)}.wide{grid-column:1/-1;min-height:92px;display:flex;align-items:center;gap:14px}.icon{width:39px;height:39px;border-radius:12px;display:grid;place-items:center;font-size:19px;margin-bottom:17px;background:rgba(255,255,255,.14)}.secondary .icon{background:var(--mint);color:var(--g)}.wide .icon{margin:0;flex:0 0 39px}.action b{font-size:13px}.action p{font-size:9px;line-height:1.45;opacity:.68;margin:5px 0 0}.arrow{position:absolute;right:14px;top:12px;font-size:18px;opacity:.55}
-.panel-row{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:14px}.metric{background:#fff;border:1px solid var(--line);border-radius:17px;padding:12px 11px}.metric .mini{font-size:8px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.7px}.metric strong{display:block;font-size:18px;margin-top:7px;color:var(--g)}
-.tip{margin-top:14px;border:1px solid #d7e9df;background:linear-gradient(135deg,#eff8f3,#fff);border-radius:19px;padding:15px;display:flex;gap:11px}.bulb{font-size:21px}.tip b{font-size:11px;color:var(--g)}.tip p{font-size:9px;line-height:1.5;color:#5f7068;margin:4px 0 0}
-.flow{margin-top:14px;border-radius:18px;background:#fff;border:1px solid var(--line);padding:13px;display:flex;align-items:center;justify-content:space-between;font-size:8px;font-weight:900;color:#4d685d}.flow span{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:7px;background:var(--mint);margin-right:4px;color:var(--g)}.flow i{font-style:normal;color:#a9b4af;font-size:13px}
-.bottom{position:fixed;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom));height:63px;background:rgba(255,255,255,.96);backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:21px;box-shadow:0 13px 32px rgba(20,51,40,.14);display:grid;grid-template-columns:repeat(3,1fr);z-index:30}.nav{border:0;background:transparent;color:#7c8983;font-size:8px;font-weight:900;cursor:pointer}.nav span{display:block;font-size:18px;margin-bottom:3px}.nav.active{color:var(--g)}
-.workspace{position:fixed;inset:0;background:#f5f7f6;z-index:50;display:none;padding-top:env(safe-area-inset-top)}.workspace.show{display:block}.whead{height:61px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;padding:8px 12px}.back{width:40px;height:40px;border:0;border-radius:12px;background:var(--mint);color:var(--g);font-size:22px;cursor:pointer}.wtitle b{display:block;font-size:13px}.wtitle span{display:block;font-size:9px;color:var(--muted);margin-top:2px}.frame{display:none;width:100%;height:calc(100% - 61px);border:0;background:#fff}.frame.show{display:block}.loading{position:absolute;left:0;right:0;top:61px;bottom:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:9px;background:#f5f7f6;z-index:2}.loading.hide{display:none}.spinner{width:29px;height:29px;border:3px solid #dcebe4;border-top-color:var(--g);border-radius:50%;animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.loading b{font-size:12px}.loading span{font-size:9px;color:var(--muted)}
+.hero{position:relative;overflow:hidden;color:#fff;background:linear-gradient(150deg,var(--deep),var(--green) 57%,var(--green2));padding:18px 16px 25px;padding-top:calc(18px + env(safe-area-inset-top));border-radius:0 0 34px 34px;box-shadow:0 15px 35px rgba(4,62,48,.2)}
+.hero:before,.hero:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.09);border-radius:50%}.hero:before{width:190px;height:190px;right:-75px;top:-90px}.hero:after{width:120px;height:120px;right:-35px;top:-55px}
+.top{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px}.mark{width:44px;height:44px;border-radius:15px;background:#fff;color:var(--green);display:grid;place-items:center;font-size:21px;font-weight:950;box-shadow:0 8px 22px rgba(0,0,0,.18)}.brand b{display:block;font-size:18px;letter-spacing:1.7px}.brand small{display:block;font-size:8px;letter-spacing:1.5px;opacity:.68;margin-top:3px;font-weight:800}.live{font-size:8px;font-weight:900;letter-spacing:.8px;padding:7px 9px;border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(255,255,255,.1);backdrop-filter:blur(8px)}
+.hero-copy{position:relative;z-index:1;margin-top:22px}.eyebrow{font-size:8px;letter-spacing:2px;font-weight:900;opacity:.66}.hero h1{font-size:31px;line-height:1.03;letter-spacing:-1.1px;margin:8px 0 0}.hero h1 em{font-style:normal;color:#c5ead7}.hero p{font-size:11px;line-height:1.5;opacity:.76;margin:9px 0 0;max-width:350px}
+.content{flex:1;overflow:auto;padding:18px 15px calc(102px + env(safe-area-inset-bottom));max-width:720px;width:100%;margin:auto}.section{display:flex;justify-content:space-between;align-items:center;margin:1px 2px 10px}.section b{font-size:14px}.section span{font-size:9px;color:var(--muted)}
+.actions{display:grid;grid-template-columns:1.1fr .9fr;gap:10px}.action{border:0;border-radius:23px;min-height:145px;padding:16px;text-align:left;cursor:pointer;position:relative;overflow:hidden;box-shadow:0 10px 25px rgba(18,55,43,.08);transition:transform .15s,box-shadow .15s}.action:active{transform:scale(.975)}.primary{color:#fff;background:linear-gradient(145deg,#0a795d,#064936)}.primary:after{content:"";position:absolute;width:110px;height:110px;border:1px solid rgba(255,255,255,.11);border-radius:50%;right:-35px;bottom:-45px}.secondary{background:#fff;color:var(--ink);border:1px solid var(--line)}.wide{grid-column:1/-1;min-height:82px;display:flex;align-items:center;gap:13px}.icon{width:41px;height:41px;border-radius:13px;display:grid;place-items:center;font-size:19px;margin-bottom:18px;background:rgba(255,255,255,.14)}.secondary .icon{background:var(--mint);color:var(--green)}.wide .icon{margin:0;flex:0 0 41px}.action b{font-size:13px}.action p{font-size:9px;line-height:1.45;opacity:.66;margin:5px 0 0}.arrow{position:absolute;right:14px;top:12px;font-size:17px;opacity:.5}
+.pulse{margin-top:15px;border-radius:20px;padding:14px;background:#fff;border:1px solid var(--line);box-shadow:0 7px 20px rgba(18,55,43,.04)}.pulse-top{display:flex;align-items:center;justify-content:space-between}.pulse-top b{font-size:11px}.pulse-top span{font-size:8px;color:var(--green);font-weight:900;background:var(--mint);padding:5px 7px;border-radius:999px}.pulse-line{display:flex;align-items:center;gap:8px;margin-top:12px}.dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px var(--mint2)}.pulse-line i{height:1px;background:var(--line);flex:1}.pulse-line strong{font-size:10px}
+.tip{margin-top:13px;border:1px solid #d6e9df;background:linear-gradient(135deg,#eef9f3,#fff);border-radius:20px;padding:15px;display:flex;gap:11px}.bulb{font-size:20px}.tip b{font-size:11px;color:var(--green)}.tip p{font-size:9px;line-height:1.5;color:#5e7068;margin:4px 0 0}
+.flow{margin-top:13px;border-radius:18px;background:#fff;border:1px solid var(--line);padding:13px;display:flex;align-items:center;justify-content:space-between;font-size:8px;font-weight:900;color:#4d685d}.flow span{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:7px;background:var(--mint);margin-right:4px;color:var(--green)}.flow i{font-style:normal;color:#a9b4af;font-size:13px}
+.bottom{position:fixed;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom));height:63px;background:rgba(255,255,255,.95);backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:22px;box-shadow:0 14px 34px rgba(20,51,40,.15);display:grid;grid-template-columns:repeat(3,1fr);z-index:30}.nav{border:0;background:transparent;color:#7c8983;font-size:8px;font-weight:900;cursor:pointer}.nav span{display:block;font-size:18px;margin-bottom:3px}.nav.active{color:var(--green)}
+.workspace{position:fixed;inset:0;background:#f5f7f6;z-index:50;display:none;padding-top:env(safe-area-inset-top)}.workspace.show{display:block}.whead{height:61px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;padding:8px 12px}.back{width:40px;height:40px;border:0;border-radius:12px;background:var(--mint);color:var(--green);font-size:22px;cursor:pointer}.wtitle b{display:block;font-size:13px}.wtitle span{display:block;font-size:9px;color:var(--muted);margin-top:2px}.frame{display:none;width:100%;height:calc(100% - 61px);border:0;background:#fff}.frame.show{display:block}.loading{position:absolute;left:0;right:0;top:61px;bottom:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:9px;background:#f5f7f6;z-index:2}.loading.hide{display:none}.spinner{width:30px;height:30px;border:3px solid #dcebe4;border-top-color:var(--green);border-radius:50%;animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.loading b{font-size:12px}.loading span{font-size:9px;color:var(--muted)}
 .install{display:none;position:fixed;left:14px;right:14px;bottom:84px;background:#17342b;color:#fff;border-radius:17px;padding:12px;z-index:40;align-items:center;gap:10px;box-shadow:0 14px 30px rgba(0,0,0,.2)}.install.show{display:flex}.install b{font-size:11px}.install small{display:block;color:#bdd0c7;font-size:9px;margin-top:2px}.install button{margin-left:auto;border:0;background:#a8d8bc;color:#17342b;border-radius:9px;padding:8px 10px;font-size:9px;font-weight:900}
-.splash{position:fixed;inset:0;z-index:100;background:linear-gradient(145deg,#043e30,#075b45,#0c8060);display:grid;place-items:center;color:#fff;transition:.45s}.splash.hide{opacity:0;visibility:hidden}.splash-in{text-align:center}.bigmark{width:84px;height:84px;border-radius:26px;background:#fff;color:var(--g);display:grid;place-items:center;font-size:40px;font-weight:950;margin:auto;box-shadow:0 22px 55px rgba(0,0,0,.25)}.splash h1{font-size:32px;letter-spacing:4px;margin:17px 0 5px}.splash p{font-size:9px;letter-spacing:1.8px;opacity:.7}
-@media(min-width:800px){.hero{padding-left:calc((100% - 700px)/2 + 15px);padding-right:calc((100% - 700px)/2 + 15px)}.bottom{width:500px;left:50%;right:auto;transform:translateX(-50%)}}
+.splash{position:fixed;inset:0;z-index:100;background:linear-gradient(145deg,#043e30,#075b45,#0c8060);display:grid;place-items:center;color:#fff;transition:.45s}.splash.hide{opacity:0;visibility:hidden}.splash-in{text-align:center}.bigmark{width:84px;height:84px;border-radius:27px;background:#fff;color:var(--green);display:grid;place-items:center;font-size:40px;font-weight:950;margin:auto;box-shadow:0 22px 55px rgba(0,0,0,.25)}.splash h1{font-size:32px;letter-spacing:4px;margin:17px 0 5px}.splash p{font-size:9px;letter-spacing:1.8px;opacity:.7}
+@media(min-width:800px){.hero{padding-left:calc((100% - 720px)/2 + 15px);padding-right:calc((100% - 720px)/2 + 15px)}.bottom{width:500px;left:50%;right:auto;transform:translateX(-50%)}}
 </style>
 </head>
 <body>
 <div class="app">
 <header class="hero">
- <div class="top">
-  <div class="brand"><div class="mark">K</div><div><b>KAIZEN</b><small>CONTINUOUS IMPROVEMENT</small></div></div>
-  <div class="live">● SYSTEM LIVE</div>
- </div>
- <div class="hero-copy">
-  <div class="eyebrow">LEAN • SIMPLE • BETTER</div>
-  <h1>Small ideas. <em>Better work.</em></h1>
-  <p>Capture improvement ideas, track your Kaizens and keep continuous improvement moving.</p>
- </div>
+ <div class="top"><div class="brand"><div class="mark">K</div><div><b>KAIZEN</b><small>CONTINUOUS IMPROVEMENT</small></div></div><div class="live">● SYSTEM LIVE</div></div>
+ <div class="hero-copy"><div class="eyebrow">LEAN • SIMPLE • BETTER</div><h1>Small ideas.<br><em>Better work.</em></h1><p>Turn everyday problems into practical improvements — one Kaizen at a time.</p></div>
 </header>
-
 <main class="content">
- <div class="section"><b>Quick Actions</b><span>Start here</span></div>
+ <div class="section"><b>Quick Actions</b><span>Make an impact</span></div>
  <div class="actions">
-  <button class="action primary" onclick="openWorkspace('Submit Kaizen','Share a new improvement idea','app')">
-   <div class="icon">✦</div><b>Submit Kaizen</b><p>Report a problem and share your better way.</p><span class="arrow">↗</span>
-  </button>
-  <button class="action secondary" onclick="openWorkspace('My Kaizens','Track your submissions','app')">
-   <div class="icon">◷</div><b>My Kaizens</b><p>Find your submitted ideas.</p><span class="arrow">↗</span>
-  </button>
-  <button class="action secondary wide" onclick="openWorkspace('Management Dashboard','Kaizen overview and status','dashboard')">
-   <div class="icon">▦</div><div><b>Management Dashboard</b><p>View Kaizen totals and current status.</p></div><span class="arrow">↗</span>
-  </button>
+  <button class="action primary" onclick="openWorkspace('Submit Kaizen','Share a new improvement idea','app')"><div class="icon">✦</div><b>Submit Kaizen</b><p>Report a problem and share your better way.</p><span class="arrow">↗</span></button>
+  <button class="action secondary" onclick="openWorkspace('My Kaizens','Track your submissions','app')"><div class="icon">◷</div><b>My Kaizens</b><p>Find your submitted ideas.</p><span class="arrow">↗</span></button>
+  <button class="action secondary wide" onclick="openWorkspace('Management Dashboard','Kaizen overview and status','dashboard')"><div class="icon">▦</div><div><b>Management Dashboard</b><p>View Kaizen totals and current status.</p></div><span class="arrow">↗</span></button>
  </div>
-
- <div class="panel-row">
-  <div class="metric"><div class="mini">Focus</div><strong>1%</strong></div>
-  <div class="metric"><div class="mini">Mindset</div><strong>5S</strong></div>
-  <div class="metric"><div class="mini">Direction</div><strong>∞</strong></div>
- </div>
-
- <div class="tip">
-  <div class="bulb">💡</div>
-  <div><b>Today's Kaizen thought</b><p>Find one source of waiting, motion, defects or difficulty. Ask: “What is the simplest improvement I can make?”</p></div>
- </div>
-
- <div class="flow">
-  <div><span>01</span> OBSERVE</div><i>→</i><div><span>02</span> IMPROVE</div><i>→</i><div><span>03</span> SHARE</div>
- </div>
+ <div class="pulse"><div class="pulse-top"><b>KAIZEN PULSE</b><span>CONTINUOUS</span></div><div class="pulse-line"><div class="dot"></div><strong>Observe</strong><i></i><strong>Improve</strong><i></i><strong>Share</strong></div></div>
+ <div class="tip"><div class="bulb">💡</div><div><b>Today's Kaizen thought</b><p>Notice one source of waiting, motion, defects or difficulty. Ask: “What is the simplest improvement I can make?”</p></div></div>
+ <div class="flow"><div><span>01</span> OBSERVE</div><i>→</i><div><span>02</span> IMPROVE</div><i>→</i><div><span>03</span> SHARE</div></div>
 </main>
-
-<nav class="bottom">
- <button class="nav active" onclick="closeWorkspace()"><span>⌂</span>HOME</button>
- <button class="nav" onclick="openWorkspace('Submit Kaizen','Share a new improvement idea','app')"><span>＋</span>CREATE</button>
- <button class="nav" onclick="openWorkspace('Management Dashboard','Kaizen overview and status','dashboard')"><span>▦</span>DASHBOARD</button>
-</nav>
+<nav class="bottom"><button class="nav active" onclick="closeWorkspace()"><span>⌂</span>HOME</button><button class="nav" onclick="openWorkspace('Submit Kaizen','Share a new improvement idea','app')"><span>＋</span>CREATE</button><button class="nav" onclick="openWorkspace('Management Dashboard','Kaizen overview and status','dashboard')"><span>▦</span>DASHBOARD</button></nav>
 </div>
-
-<div class="workspace" id="workspace">
- <div class="whead"><button class="back" onclick="closeWorkspace()">‹</button><div class="wtitle"><b id="wtitle">KAIZEN</b><span id="wsub"></span></div></div>
- <div class="loading" id="loading"><div class="spinner"></div><b>Opening KAIZEN…</b><span>Connecting to the live system</span></div>
- <iframe class="frame" id="appFrame" title="KAIZEN live app"></iframe>
- <iframe class="frame" id="dashboardFrame" title="KAIZEN management dashboard"></iframe>
-</div>
-
+<div class="workspace" id="workspace"><div class="whead"><button class="back" onclick="closeWorkspace()">‹</button><div class="wtitle"><b id="wtitle">KAIZEN</b><span id="wsub"></span></div></div><div class="loading" id="loading"><div class="spinner"></div><b>Opening KAIZEN…</b><span>Connecting to the live system</span></div><iframe class="frame" id="appFrame" title="KAIZEN live app"></iframe><iframe class="frame" id="dashboardFrame" title="KAIZEN management dashboard"></iframe></div>
 <div class="install" id="install"><div>📱</div><div><b>Install KAIZEN</b><small>Add KAIZEN to your phone home screen.</small></div><button onclick="installApp()">INSTALL</button></div>
-
 <div class="splash" id="splash"><div class="splash-in"><div class="bigmark">K</div><h1>KAIZEN</h1><p>SMALL CHANGES • BIG IMPACT</p></div></div>
-
 <script>
 const APP_URL="https://script.google.com/macros/s/AKfycbxGhfcnqjWzKkXuEuzvUxH3uda1w6nTOb1n-JzNWdeMIHpqSv3URuipQDcyKwsMiZ1Ugg/exec";
-const appFrame=document.getElementById("appFrame");
-const dashboardFrame=document.getElementById("dashboardFrame");
-const workspace=document.getElementById("workspace");
-const loading=document.getElementById("loading");
-appFrame.src=APP_URL;
-dashboardFrame.src=APP_URL;
+const appFrame=document.getElementById("appFrame"),dashboardFrame=document.getElementById("dashboardFrame"),workspace=document.getElementById("workspace"),loading=document.getElementById("loading");
+appFrame.src=APP_URL;dashboardFrame.src=APP_URL;
 let ready={app:false,dashboard:false};
-
-appFrame.onload=()=>frameReady("app");
-dashboardFrame.onload=()=>frameReady("dashboard");
-
-function frameReady(which){
- ready[which]=true;
- const current=workspace.dataset.frame;
- if(workspace.classList.contains("show") && current===which){
-   document.getElementById(which==="app"?"appFrame":"dashboardFrame").classList.add("show");
-   loading.classList.add("hide");
- }
-}
-function openWorkspace(title,sub,which){
- document.getElementById("wtitle").textContent=title;
- document.getElementById("wsub").textContent=sub;
- workspace.dataset.frame=which;
- workspace.classList.add("show");
- appFrame.classList.remove("show");
- dashboardFrame.classList.remove("show");
- loading.classList.remove("hide");
- const frame=which==="app"?appFrame:dashboardFrame;
- if(ready[which]){frame.classList.add("show");loading.classList.add("hide")}
-}
-function closeWorkspace(){
- workspace.classList.remove("show");
- appFrame.classList.remove("show");
- dashboardFrame.classList.remove("show");
- loading.classList.remove("hide");
-}
-let deferredPrompt=null;
-window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredPrompt=e;document.getElementById("install").classList.add("show")});
-async function installApp(){
- if(!deferredPrompt)return;
- deferredPrompt.prompt();
- await deferredPrompt.userChoice;
- deferredPrompt=null;
- document.getElementById("install").classList.remove("show");
-}
-if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js"))}
-setTimeout(()=>document.getElementById("splash").classList.add("hide"),850);
+appFrame.onload=()=>frameReady("app");dashboardFrame.onload=()=>frameReady("dashboard");
+function frameReady(which){ready[which]=true;if(workspace.classList.contains("show")&&workspace.dataset.frame===which){document.getElementById(which==="app"?"appFrame":"dashboardFrame").classList.add("show");loading.classList.add("hide")}}
+function openWorkspace(title,sub,which){document.getElementById("wtitle").textContent=title;document.getElementById("wsub").textContent=sub;workspace.dataset.frame=which;workspace.classList.add("show");appFrame.classList.remove("show");dashboardFrame.classList.remove("show");loading.classList.remove("hide");const frame=which==="app"?appFrame:dashboardFrame;if(ready[which]){frame.classList.add("show");loading.classList.add("hide")}}
+function closeWorkspace(){workspace.classList.remove("show");appFrame.classList.remove("show");dashboardFrame.classList.remove("show");loading.classList.remove("hide")}
+let deferredPrompt=null;window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredPrompt=e;document.getElementById("install").classList.add("show")});
+async function installApp(){if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;document.getElementById("install").classList.remove("show")}
+if("serviceWorker"in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js"));
+setTimeout(()=>document.getElementById("splash").classList.add("hide"),900);
 </script>
 </body>
 </html>
