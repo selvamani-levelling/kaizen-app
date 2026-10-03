@@ -38,29 +38,66 @@
 <main class="content">
  <div class="section"><b>Quick Actions</b><span>Make an impact</span></div>
  <div class="actions">
-  <button class="action primary" onclick="openWorkspace('Submit Kaizen','Share a new improvement idea','app')"><div class="icon">✦</div><b>Submit Kaizen</b><p>Report a problem and share your better way.</p><span class="arrow">↗</span></button>
-  <button class="action secondary" onclick="openWorkspace('My Kaizens','Track your submissions','app')"><div class="icon">◷</div><b>My Kaizens</b><p>Find your submitted ideas.</p><span class="arrow">↗</span></button>
-  <button class="action secondary wide" onclick="openWorkspace('Management Dashboard','Kaizen overview and status','dashboard')"><div class="icon">▦</div><div><b>Management Dashboard</b><p>View Kaizen totals and current status.</p></div><span class="arrow">↗</span></button>
+  <button class="action primary" onclick="openSection('submit')"><div class="icon">✦</div><b>Submit Kaizen</b><p>Report a problem and share your better way.</p><span class="arrow">↗</span></button>
+  <button class="action secondary" onclick="openSection('my')"><div class="icon">◷</div><b>My Kaizens</b><p>Find your submitted ideas.</p><span class="arrow">↗</span></button>
+  <button class="action secondary wide" onclick="openSection('dashboard')"><div class="icon">▦</div><div><b>Management Dashboard</b><p>View Kaizen totals and current status.</p></div><span class="arrow">↗</span></button>
  </div>
  <div class="pulse"><div class="pulse-top"><b>KAIZEN PULSE</b><span>CONTINUOUS</span></div><div class="pulse-line"><div class="dot"></div><strong>Observe</strong><i></i><strong>Improve</strong><i></i><strong>Share</strong></div></div>
  <div class="tip"><div class="bulb">💡</div><div><b>Today's Kaizen thought</b><p>Notice one source of waiting, motion, defects or difficulty. Ask: “What is the simplest improvement I can make?”</p></div></div>
  <div class="flow"><div><span>01</span> OBSERVE</div><i>→</i><div><span>02</span> IMPROVE</div><i>→</i><div><span>03</span> SHARE</div></div>
 </main>
-<nav class="bottom"><button class="nav active" onclick="closeWorkspace()"><span>⌂</span>HOME</button><button class="nav" onclick="openWorkspace('Submit Kaizen','Share a new improvement idea','app')"><span>＋</span>CREATE</button><button class="nav" onclick="openWorkspace('Management Dashboard','Kaizen overview and status','dashboard')"><span>▦</span>DASHBOARD</button></nav>
+<nav class="bottom"><button class="nav active" onclick="closeWorkspace()"><span>⌂</span>HOME</button><button class="nav" onclick="openSection('submit')"><span>＋</span>CREATE</button><button class="nav" onclick="openSection('dashboard')"><span>▦</span>DASHBOARD</button></nav>
 </div>
-<div class="workspace" id="workspace"><div class="whead"><button class="back" onclick="closeWorkspace()">‹</button><div class="wtitle"><b id="wtitle">KAIZEN</b><span id="wsub"></span></div></div><div class="loading" id="loading"><div class="spinner"></div><b>Opening KAIZEN…</b><span>Connecting to the live system</span></div><iframe class="frame" id="appFrame" title="KAIZEN live app"></iframe><iframe class="frame" id="dashboardFrame" title="KAIZEN management dashboard"></iframe></div>
+<div class="workspace" id="workspace"><div class="whead"><button class="back" onclick="closeWorkspace()">‹</button><div class="wtitle"><b id="wtitle">KAIZEN</b><span id="wsub"></span></div></div><div class="loading" id="loading"><div class="spinner"></div><b>Opening KAIZEN…</b><span>Connecting to the live system</span></div><iframe class="frame" id="submitFrame" title="KAIZEN submission" src=""></iframe><iframe class="frame" id="myFrame" title="My Kaizens" src=""></iframe><iframe class="frame" id="dashboardFrame" title="KAIZEN management dashboard" src=""></iframe></div>
 <div class="install" id="install"><div>📱</div><div><b>Install KAIZEN</b><small>Add KAIZEN to your phone home screen.</small></div><button onclick="installApp()">INSTALL</button></div>
 <div class="splash" id="splash"><div class="splash-in"><div class="bigmark">K</div><h1>KAIZEN</h1><p>SMALL CHANGES • BIG IMPACT</p></div></div>
 <script>
 const APP_URL="https://script.google.com/macros/s/AKfycbxGhfcnqjWzKkXuEuzvUxH3uda1w6nTOb1n-JzNWdeMIHpqSv3URuipQDcyKwsMiZ1Ugg/exec";
-const appFrame=document.getElementById("appFrame"),dashboardFrame=document.getElementById("dashboardFrame"),workspace=document.getElementById("workspace"),loading=document.getElementById("loading");
-appFrame.src=APP_URL;dashboardFrame.src=APP_URL;
-let ready={app:false,dashboard:false};
-appFrame.onload=()=>frameReady("app");dashboardFrame.onload=()=>frameReady("dashboard");
-function frameReady(which){ready[which]=true;if(workspace.classList.contains("show")&&workspace.dataset.frame===which){document.getElementById(which==="app"?"appFrame":"dashboardFrame").classList.add("show");loading.classList.add("hide")}}
-function openWorkspace(title,sub,which){document.getElementById("wtitle").textContent=title;document.getElementById("wsub").textContent=sub;workspace.dataset.frame=which;workspace.classList.add("show");appFrame.classList.remove("show");dashboardFrame.classList.remove("show");loading.classList.remove("hide");const frame=which==="app"?appFrame:dashboardFrame;if(ready[which]){frame.classList.add("show");loading.classList.add("hide")}}
-function closeWorkspace(){workspace.classList.remove("show");appFrame.classList.remove("show");dashboardFrame.classList.remove("show");loading.classList.remove("hide")}
-let deferredPrompt=null;window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredPrompt=e;document.getElementById("install").classList.add("show")});
+const workspace=document.getElementById("workspace"),loading=document.getElementById("loading");
+const frames={
+ submit:document.getElementById("submitFrame"),
+ my:document.getElementById("myFrame"),
+ dashboard:document.getElementById("dashboardFrame")
+};
+const titles={
+ submit:["Submit Kaizen","Share a new improvement idea"],
+ my:["My Kaizens","Track your submissions"],
+ dashboard:["Management Dashboard","Kaizen overview and status"]
+};
+const ready={submit:false,my:false,dashboard:false};
+function frameUrl(view){return APP_URL+"?view="+encodeURIComponent(view)+"&shell=mobile";}
+Object.keys(frames).forEach(which=>{
+ frames[which].src=frameUrl(which);
+ frames[which].addEventListener("load",()=>frameReady(which));
+});
+function frameReady(which){
+ ready[which]=true;
+ if(workspace.classList.contains("show")&&workspace.dataset.section===which){
+   frames[which].classList.add("show");
+   loading.classList.add("hide");
+ }
+}
+function openSection(which){
+ const t=titles[which];
+ if(!t)return;
+ document.getElementById("wtitle").textContent=t[0];
+ document.getElementById("wsub").textContent=t[1];
+ workspace.dataset.section=which;
+ workspace.classList.add("show");
+ Object.values(frames).forEach(f=>f.classList.remove("show"));
+ loading.classList.remove("hide");
+ if(ready[which]){
+   frames[which].classList.add("show");
+   loading.classList.add("hide");
+ }
+}
+function closeWorkspace(){
+ workspace.classList.remove("show");
+ Object.values(frames).forEach(f=>f.classList.remove("show"));
+ loading.classList.remove("hide");
+}
+let deferredPrompt=null;
+window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredPrompt=e;document.getElementById("install").classList.add("show")});
 async function installApp(){if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;document.getElementById("install").classList.remove("show")}
 if("serviceWorker"in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js"));
 setTimeout(()=>document.getElementById("splash").classList.add("hide"),900);
