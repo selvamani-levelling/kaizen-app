@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#496858">
+<meta name="theme-color" content="#08111f">
 <meta name="description" content="KAIZEN — Continuous Improvement">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
@@ -22,7 +22,7 @@ button{font:inherit}
 .live{font-size:9px;font-weight:900;letter-spacing:.8px;padding:7px 9px;border-radius:999px;background:rgba(34,197,94,.15);color:#86efac;border:1px solid rgba(134,239,172,.18)}
 .eyebrow{display:inline-block;font-size:8px;letter-spacing:2.2px;font-weight:950;color:#dbe8d3;border:1px solid rgba(255,255,255,.2);padding:7px 9px;border-radius:999px;background:rgba(255,255,255,.08);margin-bottom:12px}.hero{margin-top:20px}.hero h1{font-size:29px;line-height:1.12;margin:0;letter-spacing:-.7px}.hero h1 span{color:#d9e7c9}.hero p{font-size:12px;color:#b9c9da;line-height:1.5;margin:8px 0 0;max-width:330px}
 .content{flex:1;overflow:auto;padding:18px 17px 94px}
-.section-title{display:flex;align-items:end;justify-content:space-between;margin:3px 2px 11px}.section-title b{font-size:14px}.section-title span{font-size:10px;color:var(--muted)}.welcome-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:11px}.pulse{font-size:8px;font-weight:950;letter-spacing:1px;color:#4f725f;background:#e8f1e7;border:1px solid #d2e3d0;border-radius:999px;padding:7px 9px}.pulse:first-letter{color:#6ea56e}.mini-flow{display:flex;align-items:center;justify-content:space-between;margin-top:16px;padding:12px 13px;background:rgba(255,253,248,.78);border:1px dashed #d9d0c0;border-radius:16px;color:#68756d;font-size:8px;font-weight:900;letter-spacing:.5px}.mini-flow span{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:7px;background:#edf3eb;color:#4f725f;margin-right:4px}.mini-flow i{font-style:normal;color:#b0aaa0;font-size:13px}
+.section-title{display:flex;align-items:end;justify-content:space-between;margin:3px 2px 11px}.section-title b{font-size:14px}.section-title span{font-size:10px;color:var(--muted)}
 .actions{display:grid;grid-template-columns:1.2fr .8fr;gap:12px}
 .action{border:0;text-align:left;border-radius:24px;padding:18px;min-height:135px;cursor:pointer;box-shadow:var(--shadow);position:relative;overflow:hidden;transform:rotate(-.4deg);transition:transform .2s,box-shadow .2s}.action:nth-child(2){transform:rotate(.5deg)}.action:nth-child(3){transform:rotate(.35deg)}.action:nth-child(4){transform:rotate(-.6deg)}.action:active{transform:scale(.98) rotate(0)}
 .action.primary{background:linear-gradient(145deg,#587c69,#314b3f);color:white}.action.secondary{background:white;color:var(--ink)}
@@ -34,10 +34,10 @@ button{font:inherit}
 .quote{margin-top:14px;background:var(--navy);color:white;border-radius:20px;padding:18px;position:relative;overflow:hidden}.quote:after{content:"KAIZEN";position:absolute;right:-15px;bottom:-8px;font-size:42px;font-weight:950;color:rgba(255,255,255,.045)}.quote b{font-size:12px}.quote p{font-size:11px;line-height:1.55;color:#cbd5e1;margin:7px 0 0;max-width:85%}
 .bottom{position:fixed;left:12px;right:12px;bottom:12px;height:64px;background:rgba(255,255,255,.94);backdrop-filter:blur(18px);border:1px solid rgba(226,232,240,.9);border-radius:21px;box-shadow:0 14px 35px rgba(15,23,42,.12);display:grid;grid-template-columns:repeat(3,1fr);z-index:20}
 .nav{border:0;background:transparent;color:#64748b;font-size:9px;font-weight:900;cursor:pointer}.nav .nicon{font-size:18px;display:block;margin-bottom:3px}.nav.active{color:#4f725f}.nav.active .nicon{transform:translateY(-1px)}
-.workspace{position:fixed;inset:0;background:#f5f7fb;z-index:30;display:none}.workspace.show{display:block}.workspace-top{height:62px;background:white;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;padding:10px 13px}.back{width:40px;height:40px;border:0;background:#f1f5f9;border-radius:12px;font-size:20px}.workspace-title{font-size:14px;font-weight:900}.workspace-sub{font-size:9px;color:var(--muted);margin-top:2px}.workspace iframe{width:100%;height:calc(100% - 62px);border:0;display:none;background:white}.workspace iframe.ready{display:block}.workspace-loading{position:absolute;top:62px;bottom:0;left:0;right:0;display:none;align-items:center;justify-content:center;flex-direction:column;gap:8px;background:#f7f5ef;z-index:2;color:#496858}.workspace.loading .workspace-loading{display:flex}.workspace-loading b{font-size:13px}.workspace-loading span{font-size:9px;color:#87918b}.spinner{width:28px;height:28px;border:3px solid #dbe6dd;border-top-color:#496858;border-radius:50%;animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.workspace{position:fixed;inset:0;background:#f5f7fb;z-index:30;display:none}.workspace.show{display:block}.workspace-top{height:62px;background:white;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;padding:10px 13px}.back{width:40px;height:40px;border:0;background:#f1f5f9;border-radius:12px;font-size:20px}.workspace-title{font-size:14px;font-weight:900}.workspace-sub{font-size:9px;color:var(--muted);margin-top:2px}.workspace iframe{width:100%;height:calc(100% - 62px);border:0;display:block}
 .splash{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:radial-gradient(circle at 75% 15%,#7e9d88 0,#344b40 35%,#18251f 100%);color:white;transition:.5s}.splash.hide{opacity:0;visibility:hidden;pointer-events:none}.splash-in{text-align:center}.bigmark{width:88px;height:88px;border-radius:27px;background:white;color:var(--navy);display:grid;place-items:center;font-size:42px;font-weight:950;margin:auto;box-shadow:0 25px 65px rgba(0,0,0,.35)}.splash h1{margin:18px 0 0;font-size:34px;letter-spacing:4px}.splash p{font-size:10px;letter-spacing:2px;color:#b8c8da;margin:8px 0 23px}.loader{height:4px;width:110px;background:rgba(255,255,255,.16);border-radius:99px;overflow:hidden;margin:auto}.loader i{display:block;height:100%;width:45%;background:linear-gradient(90deg,#b7d49e,#d8b979);border-radius:99px;animation:load 1.1s infinite}@keyframes load{from{transform:translateX(-130%)}to{transform:translateX(300%)}}
 .install{display:none;position:fixed;left:16px;right:16px;bottom:86px;background:#0f172a;color:white;border-radius:17px;padding:12px 13px;z-index:25;box-shadow:0 15px 35px rgba(15,23,42,.25);align-items:center;gap:10px}.install.show{display:flex}.install b{font-size:11px}.install span{font-size:9px;color:#cbd5e1;display:block;margin-top:2px}.install button{margin-left:auto;border:0;background:#9bbf9a;color:#26332d;border-radius:10px;padding:9px 11px;font-weight:900;font-size:10px}
-.tools-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.tool-card{border:1px solid var(--line);background:rgba(255,253,248,.92);border-radius:20px;padding:15px;text-align:left;box-shadow:0 6px 20px rgba(15,23,42,.04);cursor:pointer;min-height:105px}.tool-card span{display:block;font-size:23px;margin-bottom:10px}.tool-card b{display:block;font-size:11px}.tool-card small{display:block;color:var(--muted);font-size:9px;margin-top:4px}.tool-card:active{transform:scale(.98)}.panel{position:fixed;inset:0;background:rgba(3,8,18,.55);backdrop-filter:blur(5px);z-index:60;display:none;align-items:flex-end}.panel.show{display:flex}.panel-box{background:white;width:100%;border-radius:26px 26px 0 0;padding:20px 18px 28px;max-height:80vh;overflow:auto;animation:up .25s ease}@keyframes up{from{transform:translateY(100%)}to{transform:translateY(0)}}.panel-head{display:flex;justify-content:space-between;align-items:center}.panel-head b{font-size:17px}.close-panel{width:36px;height:36px;border:0;border-radius:11px;background:#f1f5f9;font-size:18px}.panel-sub{font-size:10px;color:#64748b;margin:4px 0 14px}.panel-body{white-space:pre-line;font-size:12px;line-height:1.7;color:#334155;background:#f8fafc;border-radius:15px;padding:15px}.idea-chip{margin-top:12px;padding:13px;border-radius:14px;background:#eff6ff;color:#1e40af;font-size:11px;font-weight:700}.streak{display:flex;align-items:center;gap:10px;margin-top:14px;background:linear-gradient(135deg,#f7f0df,#fbf7eb);border:1px solid #e7d8b8;border-radius:17px;padding:13px}.streak strong{font-size:18px}.streak small{display:block;color:#78633e;font-size:9px;margin-top:2px}.streak-reset{margin-left:auto;border:0;background:rgba(120,99,62,.10);color:#78633e;width:30px;height:30px;border-radius:10px;font-weight:900;cursor:pointer}
+.tools-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.tool-card{border:1px solid var(--line);background:rgba(255,253,248,.92);border-radius:20px;padding:15px;text-align:left;box-shadow:0 6px 20px rgba(15,23,42,.04);cursor:pointer;min-height:105px}.tool-card span{display:block;font-size:23px;margin-bottom:10px}.tool-card b{display:block;font-size:11px}.tool-card small{display:block;color:var(--muted);font-size:9px;margin-top:4px}.tool-card:active{transform:scale(.98)}.panel{position:fixed;inset:0;background:rgba(3,8,18,.55);backdrop-filter:blur(5px);z-index:60;display:none;align-items:flex-end}.panel.show{display:flex}.panel-box{background:white;width:100%;border-radius:26px 26px 0 0;padding:20px 18px 28px;max-height:80vh;overflow:auto;animation:up .25s ease}@keyframes up{from{transform:translateY(100%)}to{transform:translateY(0)}}.panel-head{display:flex;justify-content:space-between;align-items:center}.panel-head b{font-size:17px}.close-panel{width:36px;height:36px;border:0;border-radius:11px;background:#f1f5f9;font-size:18px}.panel-sub{font-size:10px;color:#64748b;margin:4px 0 14px}.panel-body{white-space:pre-line;font-size:12px;line-height:1.7;color:#334155;background:#f8fafc;border-radius:15px;padding:15px}.idea-chip{margin-top:12px;padding:13px;border-radius:14px;background:#eff6ff;color:#1e40af;font-size:11px;font-weight:700}.streak{display:flex;align-items:center;gap:10px;margin-top:14px;background:linear-gradient(135deg,#f7f0df,#fbf7eb);border:1px solid #e7d8b8;border-radius:17px;padding:13px}.streak strong{font-size:18px}.streak small{display:block;color:#78633e;font-size:9px;margin-top:2px}
 @media(min-width:800px){.content{max-width:900px;width:100%;margin:auto}.header{border-radius:0 0 30px 30px}.bottom{max-width:500px;left:50%;right:auto;transform:translateX(-50%);width:500px}}
 </style>
 </head>
@@ -53,7 +53,7 @@ button{font:inherit}
 </header>
 
 <main class="content">
- <div class="welcome-row"><div><div class="section-title" style="margin:0"><b>Quick Actions</b><span>Start here</span></div></div><div class="pulse">● READY</div></div>
+ <div class="section-title"><b>Quick Actions</b><span>Start here</span></div>
  <div class="actions">
   <button class="action primary" onclick="openWorkspace('Submit Kaizen','Share your improvement idea')"><div class="icon">✦</div><b>Submit Kaizen</b><p>Capture a problem and your improvement idea.</p><span class="arrow">↗</span></button>
   <button class="action secondary" onclick="openWorkspace('My Kaizens','Track your submitted ideas')"><div class="icon">◷</div><b>My Kaizens</b><p>Check your submissions and status.</p><span class="arrow">↗</span></button>
@@ -78,7 +78,6 @@ button{font:inherit}
   <button class="tool-card" onclick="ideaStarter()"><span>💡</span><b>Idea Starter</b><small>Get an improvement prompt</small></button>
   <button class="tool-card" onclick="showPanel('Kaizen Journey','How an idea moves','01 OBSERVE → 02 SUBMIT → 03 REVIEW → 04 IMPROVE → 05 STANDARDIZE.\n\nYour submitted idea starts the journey.')"><span>🚀</span><b>Journey</b><small>See the improvement flow</small></button>
  </div>
-<div class="mini-flow"><div><span>01</span> OBSERVE</div><i>→</i><div><span>02</span> IMPROVE</div><i>→</i><div><span>03</span> SHARE</div></div>
 </main>
 
 <nav class="bottom">
@@ -89,64 +88,30 @@ button{font:inherit}
 
 <div class="install" id="install"><div>📱</div><div><b>Install KAIZEN</b><span>Keep it on your phone like a real app.</span></div><button onclick="installApp()">INSTALL</button></div>
 
-<div class="streak"><div style="font-size:22px">🔥</div><div><strong id="streakNum">0</strong><small> days of improvement mindset</small></div><button class="streak-reset" onclick="resetStreak()">↻</button></div>
+<div class="streak"><div style="font-size:22px">🔥</div><div><strong id="streakNum">0</strong><small> days of improvement mindset</small></div></div>
 
 <div class="panel" id="panel" onclick="if(event.target===this)closePanel()"><div class="panel-box"><div class="panel-head"><b id="panelTitle">KAIZEN</b><button class="close-panel" onclick="closePanel()">×</button></div><div class="panel-sub" id="panelSub"></div><div class="panel-body" id="panelBody"></div><div class="idea-chip" id="ideaChip"></div></div></div>
 
 <div class="workspace" id="workspace">
  <div class="workspace-top"><button class="back" onclick="closeWorkspace()">‹</button><div><div class="workspace-title" id="wtitle">KAIZEN</div><div class="workspace-sub" id="wsub"></div></div></div>
- <div class="workspace-loading" id="workspaceLoading"><div class="spinner"></div><b>Opening KAIZEN…</b><span>Please wait</span></div>
- <iframe id="submitFrame" title="Submit Kaizen workspace"></iframe>
- <iframe id="dashboardFrame" title="Kaizen Dashboard workspace"></iframe>
+ <iframe id="workspaceFrame" title="KAIZEN workspace"></iframe>
 </div>
 
 <div class="splash" id="splash"><div class="splash-in"><div class="bigmark">K</div><h1>KAIZEN</h1><p>SMALL CHANGES • BIG IMPACT</p><div class="loader"><i></i></div></div></div>
 
 <script>
-const URL="https://script.google.com/macros/s/AKfycbwK8h9WlzR4adtGs5rBJirRQCvx-d8GATspibnndy0xT-F-HGXDIRLUJVIU-KDb6e5n/exec";
+const URL="https://script.google.com/macros/s/AKfycbxGhfcnqjWzKkXuEuzvUxH3uda1w6nTOb1n-JzNWdeMIHpqSv3URuipQDcyKwsMiZ1Ugg/exec";
 let deferredPrompt=null;
-document.getElementById("submitFrame").src=URL;
-document.getElementById("dashboardFrame").src=URL;
-document.getElementById("submitFrame").onload=()=>frameLoaded("submit");
-document.getElementById("dashboardFrame").onload=()=>frameLoaded("dashboard");
-document.getElementById("submitFrame").onerror=()=>frameFailed("submit");
-document.getElementById("dashboardFrame").onerror=()=>frameFailed("dashboard");
-let framesReady={submit:false,dashboard:false};
 function openWorkspace(title,sub){
  document.getElementById("wtitle").textContent=title;
  document.getElementById("wsub").textContent=sub;
- const isDashboard=title==="Kaizen Dashboard";
- const frame=document.getElementById(isDashboard?"dashboardFrame":"submitFrame");
- const other=document.getElementById(isDashboard?"submitFrame":"dashboardFrame");
- other.classList.remove("ready");
- document.getElementById("workspace").classList.add("show");
- document.getElementById("workspace").classList.toggle("loading",!framesReady[isDashboard?"dashboard":"submit"]);
- if(framesReady[isDashboard?"dashboard":"submit"]){
-   frame.classList.add("ready");
-   document.getElementById("workspace").classList.remove("loading");
- }
+ let target=URL;
+ if(title==="Kaizen Dashboard") target=URL+"?view=dashboard";
+ document.getElementById("workspaceFrame").src=target;
+ document.getElementById("workspace").classList.add("show")
 }
-function closeWorkspace(){
- document.getElementById("workspace").classList.remove("show","loading");
- document.getElementById("submitFrame").classList.remove("ready");
- document.getElementById("dashboardFrame").classList.remove("ready");
-}
-function frameFailed(which){
- document.getElementById("workspace").classList.remove("loading");
- const title=which==="dashboard"?"Dashboard":"Submit Kaizen";
- document.getElementById("wtitle").textContent=title+" unavailable";
- document.getElementById("wsub").textContent="The Google Apps Script deployment could not be opened.";\n}\nfunction frameLoaded(which){
- framesReady[which]=true;
- if(document.getElementById("workspace").classList.contains("show")){
-   const title=document.getElementById("wtitle").textContent;
-   const wanted=title==="Kaizen Dashboard"?"dashboard":"submit";
-   if(wanted===which){
-     document.getElementById(which==="dashboard"?"dashboardFrame":"submitFrame").classList.add("ready");
-     document.getElementById("workspace").classList.remove("loading");
-   }
- }
-}
-function showTip(){showPanel("KAIZEN TIP","A small thought for today","Find one source of waste today: waiting, motion, defects, over-processing, inventory, transport or rework.\n\nAsk yourself: “Can I make this one step simpler?”");}
+function closeWorkspace(){document.getElementById("workspace").classList.remove("show");document.getElementById("workspaceFrame").src="about:blank"}
+function showTip(){alert("KAIZEN TIP\n\nFind one source of waste today: waiting, motion, defects, over-processing, inventory, transport or rework. Ask: “Can I make this one step simpler?”")}
 window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredPrompt=e;document.getElementById("install").classList.add("show")});
 async function installApp(){if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;document.getElementById("install").classList.remove("show")}
 const prompts=[
@@ -161,12 +126,11 @@ const prompts=[
 function showPanel(title,sub,body){document.getElementById("panelTitle").textContent=title;document.getElementById("panelSub").textContent=sub;document.getElementById("panelBody").textContent=body;document.getElementById("ideaChip").textContent="💡 Ask yourself: What is the simplest improvement I can try?";document.getElementById("panel").classList.add("show")}
 function closePanel(){document.getElementById("panel").classList.remove("show")}
 function ideaStarter(){const p=prompts[Math.floor(Math.random()*prompts.length)];showPanel("Idea Starter","Your next Kaizen prompt",p)}
-function resetStreak(){localStorage.removeItem("kaizen_open_date");localStorage.removeItem("kaizen_streak");document.getElementById("streakNum").textContent="0"}
 function updateStreak(){const key="kaizen_open_date";const today=new Date().toISOString().slice(0,10);const old=localStorage.getItem(key);let n=Number(localStorage.getItem("kaizen_streak")||0);if(old!==today){n++;localStorage.setItem(key,today);localStorage.setItem("kaizen_streak",n)}document.getElementById("streakNum").textContent=n}
 updateStreak();
 
 if("serviceWorker"in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js"));
-setTimeout(()=>document.getElementById("splash").classList.add("hide"),900);
+setTimeout(()=>document.getElementById("splash").classList.add("hide"),1200);
 </script>
 </body>
 </html>
