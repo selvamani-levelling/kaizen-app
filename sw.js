@@ -1,4 +1,4 @@
-const CACHE = "kaizen-shell-v3";
+const CACHE = "kaizen-shell-v4";
 const ASSETS = ["./", "./index.html", "./manifest.json", "./icons/icon.svg"];
 
 self.addEventListener("install", event => {
