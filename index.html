@@ -104,10 +104,19 @@ let deferredPrompt=null;
 function openWorkspace(title,sub){
  document.getElementById("wtitle").textContent=title;
  document.getElementById("wsub").textContent=sub;
- let target=URL;
- if(title==="Kaizen Dashboard") target=URL+"?view=dashboard";
+
+ let view="submit";
+
+ if(title==="My Kaizens"){
+   view="my";
+ }else if(title==="Kaizen Dashboard"){
+   view="dashboard";
+ }
+
+ const target=URL+"?view="+encodeURIComponent(view)+"&shell=mobile";
+
  document.getElementById("workspaceFrame").src=target;
- document.getElementById("workspace").classList.add("show")
+ document.getElementById("workspace").classList.add("show");
 }
 function closeWorkspace(){document.getElementById("workspace").classList.remove("show");document.getElementById("workspaceFrame").src="about:blank"}
 function showTip(){alert("KAIZEN TIP\n\nFind one source of waste today: waiting, motion, defects, over-processing, inventory, transport or rework. Ask: “Can I make this one step simpler?”")}
